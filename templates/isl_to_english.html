@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+  ISL to English - Sign Language WebApp
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/isl_to_english.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="isl-to-english-content">
+        <div class="webcam-container">
+            <h2>Camera Feed</h2>
+            <img id="camera-feed" src="{{ url_for('video_feed') }}" alt="Camera Feed">
+        </div>
+        <div class="predictions-container">
+            <h2>Detected Signs</h2>
+            <p id="detected-signs">Waiting for signs...</p>
+        </div>
+    </div>
+{% endblock %}

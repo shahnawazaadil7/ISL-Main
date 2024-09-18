@@ -129,11 +129,39 @@ def serve_static(filename):
 
 @app.route('/isl_to_english')
 def isl_to_english():
-    return render_template('isltoenglish.html')
+    return render_template('isl_to_english.html')
 
 @app.route('/english_to_isl')
 def english_to_isl():
     return render_template('english_to_isl.html')
+
+VIDEO_DIRECTORY = '/Users/shahnawazaadil/Desktop/ISL/English words'
+@app.route('/learning')
+def learning():
+    return render_template('learning.html')
+
+@app.route('/videos/<letter>', methods=['GET'])
+def get_videos(letter):
+    video_folder = os.path.join(VIDEO_DIRECTORY, letter.upper())
+    if os.path.exists(video_folder):
+        videos = []
+        for video_file in os.listdir(video_folder):
+            if video_file.endswith('.mp4'):
+                videos.append({
+                    'name': os.path.splitext(video_file)[0],  # Name of the video without extension
+                    'path': f'/videos/{letter}/{video_file}'  # Corrected path to serve videos
+                })
+        return jsonify(videos)
+    return jsonify([])
+
+# Route to serve actual video files
+@app.route('/videos/<letter>/<filename>')
+def serve_video(letter, filename):
+    return send_from_directory(os.path.join(VIDEO_DIRECTORY, letter.upper()), filename)
+
+@app.route('/quiz')
+def quiz():
+    return render_template('quiz.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

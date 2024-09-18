@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Video Dictionary
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/learning.css') }}">
+{% endblock %}
+
+{% block content %}
+    <h1>Video Dictionary</h1>
+    <p>Click on a letter to view the videos starting with that letter:</p>
+    
+    <!-- Letters A to Z -->
+    <div class="letters-container">
+        <span class="letter" onclick="fetchVideos('A')">A</span>
+        <span class="letter" onclick="fetchVideos('B')">B</span>
+        <span class="letter" onclick="fetchVideos('C')">C</span>
+        <span class="letter" onclick="fetchVideos('D')">D</span>
+        <span class="letter" onclick="fetchVideos('E')">E</span>
+        <span class="letter" onclick="fetchVideos('F')">F</span>
+        <span class="letter" onclick="fetchVideos('G')">G</span>
+        <span class="letter" onclick="fetchVideos('H')">H</span>
+        <span class="letter" onclick="fetchVideos('I')">I</span>
+        <span class="letter" onclick="fetchVideos('J')">J</span>
+        <span class="letter" onclick="fetchVideos('K')">K</span>
+        <span class="letter" onclick="fetchVideos('L')">L</span>
+        <span class="letter" onclick="fetchVideos('M')">M</span>
+        <span class="letter" onclick="fetchVideos('N')">N</span>
+        <span class="letter" onclick="fetchVideos('O')">O</span>
+        <span class="letter" onclick="fetchVideos('P')">P</span>
+        <span class="letter" onclick="fetchVideos('Q')">Q</span>
+        <span class="letter" onclick="fetchVideos('R')">R</span>
+        <span class="letter" onclick="fetchVideos('S')">S</span>
+        <span class="letter" onclick="fetchVideos('T')">T</span>
+        <span class="letter" onclick="fetchVideos('U')">U</span>
+        <span class="letter" onclick="fetchVideos('V')">V</span>
+        <span class="letter" onclick="fetchVideos('W')">W</span>
+        <span class="letter" onclick="fetchVideos('X')">X</span>
+        <span class="letter" onclick="fetchVideos('Y')">Y</span>
+        <span class="letter" onclick="fetchVideos('Z')">Z</span>
+    </div>
+
+    <hr>
+
+    <!-- Video List Container -->
+    <div id="video-list">
+        <p>Select a letter to see videos.</p>
+    </div>
+{% endblock %}

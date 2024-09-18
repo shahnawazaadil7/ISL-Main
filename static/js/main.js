@@ -29,6 +29,64 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
+// Initialize video stream on page load
+window.onload = function() {
+    startVideo();
+};
+
+// Function to start video stream (Placeholder)
+function startVideo() {
+    const video = document.getElementById('camera-feed');
+    if (video) {
+        video.src = '/video_feed';  // Ensure this URL matches your Flask route
+    } else {
+        console.error('Camera feed element not found.');
+    }
+}
+
+function fetchVideos(letter) {
+            fetch(`/videos/${letter}`)
+            .then(response => response.json())
+            .then(videos => {
+                const videoContainer = document.getElementById('video-list');
+                videoContainer.innerHTML = '';  // Clear current videos
+
+                // Display videos in card format
+                if (videos.length > 0) {
+                    const container = document.createElement('div');
+                    container.className = 'container';
+
+                    videos.forEach(video => {
+                        const card = document.createElement('div');
+                        card.className = 'card';
+
+                        const videoElement = document.createElement('video');
+                        videoElement.setAttribute('controls', '');
+                        const sourceElement = document.createElement('source');
+                        sourceElement.src = video.path;
+                        sourceElement.type = 'video/mp4';
+                        videoElement.appendChild(sourceElement);
+
+                        const cardContent = document.createElement('div');
+                        cardContent.className = 'card-content';
+
+                        const videoName = document.createElement('h4');
+                        videoName.textContent = video.name;
+
+                        cardContent.appendChild(videoName);
+                        card.appendChild(videoElement);
+                        card.appendChild(cardContent);
+
+                        container.appendChild(card);
+                    });
+
+                    videoContainer.appendChild(container);
+                } else {
+                    videoContainer.innerHTML = '<p>No videos available for this letter.</p>';
+                }
+            });
+        }
+
 
 (function() {
   "use strict";
