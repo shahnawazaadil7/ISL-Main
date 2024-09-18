@@ -1,0 +1,57 @@
+/* English to ISL Page____________________________________________________________________________________________ */
+#english-to-isl {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 20px;
+}
+
+.searchbar {
+  display: flex;
+  justify-content: center;
+  margin-top: auto; /* Ensures the search bar is at the bottom */
+}
+
+.searchbar input {
+  width: 100%;
+  max-width: 600px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #007bff;
+  font-size: 16px;
+}
+
+.searchbar button {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.searchbar button:hover {
+  background-color: #0059b3;
+}
+
+.isl-output {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.isl-output img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}

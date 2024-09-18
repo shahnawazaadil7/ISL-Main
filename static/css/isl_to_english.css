@@ -1,0 +1,28 @@
+/* ISL to English Page___________________________________________________________________________________________ */
+#isl-to-english {
+  padding: 20px;
+}
+
+.isl-to-english-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.webcam-container, .predictions-container {
+  width: 48%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.webcam-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+#detected-signs {
+  font-size: 24px;
+  color: #007bff;
+}

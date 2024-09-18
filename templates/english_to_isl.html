@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISL to English - Sign Language WebApp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/isl_to_english.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/aos/aos.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}">
+</head>
+<body class="index-page">
+    <div id="english-to-isl"></div>
+        <div class="searchbar">
+            <input type="text" id="textInput" placeholder="Type text here">
+            <button id="convertButton">Convert</button>
+        </div>
+        <div class="isl-output" id="islOutput"></div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Sign Language WebApp</p>
+    </footer>
+
+    <!-- Vendor JS Files -->
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/php-email-form/validate.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/purecounter/purecounter_vanilla.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
