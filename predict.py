@@ -135,7 +135,7 @@ def isl_to_english():
 def english_to_isl():
     return render_template('english_to_isl.html')
 
-VIDEO_DIRECTORY = '/Users/shahnawazaadil/Desktop/ISL/English words'
+VIDEO_DIRECTORY = '/Users/shahnawazaadil/Desktop/ISL/Videos'
 @app.route('/learning')
 def learning():
     return render_template('learning.html')
